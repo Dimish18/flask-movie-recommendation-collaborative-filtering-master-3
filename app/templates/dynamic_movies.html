@@ -1,0 +1,24 @@
+<div id="dynamic_movies">
+    {% if MOVIE_DATA.items() %}
+        <div class="row row-cols-1 row-cols-md-3 g-4" id = "movies_list">
+
+            {% for movie, img in MOVIE_DATA.items() %}
+                <div class="col">
+                    <div class="card">
+                        <img class="card_img" src= {{img}} />
+                        <div class="card-body">
+                            <h5 class="card_title"> {{ movie }} </h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    {% else %}
+    <div class="alert alert-dark" role="alert" style="text-align: center">
+      Try to suggest more movies 🤔
+    </div>
+    {% endif %}
+</div>
+
+<!--https://api.themoviedb.org/3/movie/550?api_key=45f8ee72b4c92bcc86d6559e4eaf7c5d-->
